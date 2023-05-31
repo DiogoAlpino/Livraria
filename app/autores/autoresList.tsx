@@ -37,7 +37,7 @@ function AutoresList() {
       <button onClick={handleList} type="button">Listar Autores</button>
       <ul>
       {autores.map((autor: any) => (
-        <Link key={autor.id} href={`/autor/${autor.id}`} >
+        <div key={autor.id}>
             <li >
               <strong>Nome: </strong>
               {autor.nome}
@@ -48,7 +48,7 @@ function AutoresList() {
               <strong>Biografia: </strong>
               {autor.biografia}
             </li>
-          </Link>
+          </div>
           )
         )}
       </ul>
