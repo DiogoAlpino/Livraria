@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import AutoresList from './autoresList';
+import '../styles.css';
 
 type IAutor = {
   nome?: string,

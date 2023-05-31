@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { format } from 'date-fns';
+import '../styles.css';
 
 function LivrosList() {
   const [livros, setLivros] = useState([]);
@@ -61,14 +63,14 @@ function LivrosList() {
       <button onClick={handleList} type="button">Listar Livros</button>
       <ul>
         {livros.map((livro: any) => (
-          <main key={livro.id}>
+          <main className='card' key={livro.id}>
             <Link href={`/livros/${livro.id}`} >
               <li >
                 <strong>Nome: </strong>
                 {livro.nome}
                 <br />
                 <strong>Lancamento: </strong>
-                {livro.lancamento}
+                {format(new Date(livro.lancamento), 'dd/MM/yyyy')}
                 <br />
                 <strong>Descricao: </strong>
                 {livro.descricao}

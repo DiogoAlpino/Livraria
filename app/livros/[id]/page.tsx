@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
+import '../../styles.css';
 
 type ILivro = {
   nome?: string,
@@ -84,6 +85,7 @@ function Card() {
   
   return (
     <main>
+      <h2>Editar Livro</h2>
     <form onSubmit={handlePut} >
       <div>
         <label>Nome:</label>
@@ -105,7 +107,7 @@ function Card() {
         <label>Categoria:</label>
         <input value={livro.categoria} onChange={(e) => handleOnChange(e.target.value, "categoria")} />
       </div>
-      <button type="submit">Editar Autor</button>
+      <button type="submit">Editar Livro</button>
     </form>
    </main>
   );

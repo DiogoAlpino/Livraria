@@ -1,5 +1,6 @@
-import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { format } from 'date-fns';
+import '../styles.css';
 
 function AutoresList() {
   const [autores, setAutores] = useState([]);
@@ -37,13 +38,13 @@ function AutoresList() {
       <button onClick={handleList} type="button">Listar Autores</button>
       <ul>
       {autores.map((autor: any) => (
-        <div key={autor.id}>
+        <div className='card'  key={autor.id}>
             <li >
               <strong>Nome: </strong>
               {autor.nome}
               <br />
               <strong>Data de Nascimento: </strong>
-              {autor.dataNascimento}
+              {format(new Date(autor.dataNascimento), 'dd/MM/yyyy')}
               <br />
               <strong>Biografia: </strong>
               {autor.biografia}

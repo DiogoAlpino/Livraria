@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import LivrosList from './livrosList';
+import '../styles.css';
 
 type ILivro = {
   nome?: string,
