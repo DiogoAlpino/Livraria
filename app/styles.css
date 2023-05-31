@@ -114,3 +114,20 @@ li {
   margin-right: 10px;
 }
 
+.link:hover {
+  color: #0c7b7b;
+  border-color: #0c7b7b;
+}
+
+.link {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #0e9797;
+}
