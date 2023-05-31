@@ -31,30 +31,6 @@ function AutoresList() {
       }
     };
 
-  const handleDelete = async (id: string) => {
-      try {
-        const response = await fetch(`http://localhost:3000/api/hello/${id}`, {
-          method: 'DELETE',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-        // console.log(response);
-        
-        if (response.ok) {
-          // Autor excluído com sucesso
-          console.log('Autor excluído com sucesso!');
-          // Atualizar a lista de autores
-          handleList();
-        } else {
-          // Lidar com erros de exclusão de autor
-          console.error('Erro ao excluir autor:', response.status);
-        }
-      } catch (error) {
-        console.error('Erro ao excluir autor:', error);
-      }
-    };  
-
   return (
     <div>
       <h2>Lista de Autores</h2>
@@ -72,7 +48,6 @@ function AutoresList() {
               <strong>Biografia: </strong>
               {autor.biografia}
             </li>
-            <button onClick={() => handleDelete(autor.id)}>Excluir</button>
           </Link>
           )
         )}
